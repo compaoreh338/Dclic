@@ -23,8 +23,8 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('userID')->references('id')->on('users');
-            $table->foreign('cohorteID')->references('id')->on('cohortes');
-            $table->foreign('domaineID')->references('id')->on('domaines');
+            $table->foreign('id')->references('id')->on('cohortes');
+            $table->foreign('id')->references('id')->on('domaines');
         });
     }
 
