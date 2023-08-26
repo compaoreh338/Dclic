@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Category;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\Response;
 
 class CategoryPolicy
@@ -11,9 +12,10 @@ class CategoryPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(User $user): bool
+    public function viewAny(User $user)
     {
-        //
+        // Par exemple, permettre à tous les utilisateurs authentifiés de voir la liste
+        return auth::check();
     }
 
     /**
