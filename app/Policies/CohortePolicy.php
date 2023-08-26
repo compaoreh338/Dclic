@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Cohorte;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\Response;
 
 class CohortePolicy
@@ -13,7 +14,7 @@ class CohortePolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return auth::check();
     }
 
     /**
